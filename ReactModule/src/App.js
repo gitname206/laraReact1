@@ -11,9 +11,8 @@ class App extends Component {
   }
 
   componentDidMount(){ 
-    //fetch('http://localhost:8000/api/movies')
-   // fetch('http://jsonplaceholder.typicode.com/users')
-   fetch('http://jsonplaceholder.typicode.com/users')
+    fetch('http://localhost:8000/api/movies')
+   //fetch('http://jsonplaceholder.typicode.com/users')
     .then(res => res.json())
     .then(json => {
       this.setState({
@@ -31,10 +30,10 @@ class App extends Component {
 
     for(var i=0;i<items.length;i++){
       if(currentGenre==items[i].Genre){
-        string += items[i].Genre+"<div row><img width='100px' src='"+ items[i].imageURL+"'></img></div>";
+        string += "<h2>"+items[i].title+"</h2>"+ items[i].body+"<img class='rounded float-left' width='100px' src='"+ items[i].imageURL+"'></img>";
       }
     }
-  
+ 
     box.innerHTML =string;
   };
 
@@ -46,6 +45,7 @@ class App extends Component {
     }else{
     return ( 
       <div className="App">
+        <movieDesc/>
        <br></br> <div className="container">
         <h1>API Integration</h1>
         <div className="input-group">
