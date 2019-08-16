@@ -11,7 +11,8 @@ class App extends Component {
   }
 
   componentDidMount(){ 
-    fetch('http://localhost:8000/api/movies')
+    //fetch('http://localhost:8000/api/movies')
+    fetch('http://jsonplaceholder.typicode.com/users')
     .then(res => res.json())
     .then(json => {
       this.setState({
