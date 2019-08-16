@@ -12,7 +12,7 @@ class App extends Component {
 
   componentDidMount(){ 
     fetch('http://localhost:8000/api/movies')
-   //fetch('http://jsonplaceholder.typicode.com/users')
+  // fetch('http://jsonplaceholder.typicode.com/users')
     .then(res => res.json())
     .then(json => {
       this.setState({
@@ -33,19 +33,17 @@ class App extends Component {
         string += "<h2>"+items[i].title+"</h2>"+ items[i].body+"<img class='rounded float-left' width='100px' src='"+ items[i].imageURL+"'></img>";
       }
     }
- 
+  
     box.innerHTML =string;
   };
 
   render(){
     var {isLoaded, items}=this.state;
-    console.log("App - Rendered");
     if(!isLoaded){
       return <div>Loading...</div>;
     }else{
     return ( 
       <div className="App">
-        <movieDesc/>
        <br></br> <div className="container">
         <h1>API Integration</h1>
         <div className="input-group">
