@@ -1,10 +1,9 @@
 # laraReact1
-Foobar is a Python library for dealing with word pluralization.
+Simple application that displays movies in several genres including Drama, Horror and Sci Fi. 
 
 ## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
+1. Create a GitHub account at (https://github.com/)
+2. 
 ```bash
 pip install foobar
 ```

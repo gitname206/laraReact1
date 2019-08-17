@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import './App.css';
-
+import MovieDesc from './components/movieDesc';
 class App extends Component {  
   constructor(props) {
     super(props);
     this.state = {
       items:[],
       isLoaded:false,
+      currentIndex:-1
     }
   }
 
   componentDidMount(){ 
     fetch('http://localhost:8000/api/movies')
-  // fetch('http://jsonplaceholder.typicode.com/users')
     .then(res => res.json())
     .then(json => {
       this.setState({
@@ -22,49 +22,50 @@ class App extends Component {
     }); 
   }
 
-  handleIncrement = items => {
+  setMovie = () =>{
     var genreSelect = document.getElementById('genre');
     var currentGenre = genreSelect.options[genreSelect.selectedIndex].value;
-    var box = document.getElementById('displayBox');
-    var string = "";
 
-    for(var i=0;i<items.length;i++){
-      if(currentGenre==items[i].Genre){
-        string += "<h2>"+items[i].title+"</h2>"+ items[i].body+"<img class='rounded float-left' width='100px' src='"+ items[i].imageURL+"'></img>";
+    var foundIndex = -1;
+    for(var i=0;i<this.state.items.length;i++){
+      if(currentGenre==this.state.items[i].Genre && this.state.currentIndex != i){
+        foundIndex = i;
       }
     }
-  
-    box.innerHTML =string;
+    if(foundIndex != -1){
+      this.setState({currentIndex:this.state.currentIndex =foundIndex});
+    }
   };
 
   render(){
     var {isLoaded, items}=this.state;
-    if(!isLoaded){
-      return <div>Loading...</div>;
+
+    if(!isLoaded || this.state.currentIndex == -1){
+      return  <div className="App"> 
+        <MovieDesc value={this}/>   
+      </div>;
     }else{
     return ( 
       <div className="App">
-       <br></br> <div className="container">
-        <h1>API Integration</h1>
-        <div className="input-group">
-        <select className="custom-select d-block w-1" id="genre" required>
-                  <option value="">Choose...</option>
-                  <option>Drama</option>
-                  <option>Horror</option>
-                  <option>SciFi</option>
-                  <option>Documentary</option>
-                </select>
-              <div className="input-group-append">
-                <button type="submit" className="btn btn-secondary" onClick={() => this.handleIncrement(items)} value="Drama">Submit</button>
-              </div>
+        <MovieDesc value={this}/> 
+        <div className="container">
+            &nbsp;
+            <div className="row">
+              <a onClick={this.setMovie}><h2>{this.state.items[this.state.currentIndex].title}</h2></a>
             </div>
-            <br></br><div className="row" id="displayBox">Message Box
-          </div>
+            <div className="row">
+              <img onClick={this.setMovie} src={this.state.items[this.state.currentIndex].imageURL} width='100'></img>
+            </div>
+            <div className="row"> 
+              <h4>{this.state.items[this.state.currentIndex].Genre}</h4>
+            </div>
+            <div className="row">
+              <p class="text-left">{this.state.items[this.state.currentIndex].body}</p>
+            </div>
+            </div>
         </div>    
-      </div>
     );
    }
   }
 }
-
 export default App;

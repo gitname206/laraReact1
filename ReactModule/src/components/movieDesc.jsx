@@ -1,9 +1,30 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
-class movieDesc extends Component {
+class MovieDesc extends Component {
+    state={
+        value:this.props.value
+    };
+
     render(){
-        return <h1>Test Element</h1>;
+        React.createElement('div')
+        return (
+            <div className="container">
+                <br></br>
+                <h1>API Integration</h1><br></br>
+                <div className="input-group">
+                    <select className="custom-select d-block w-1" id="genre" required>
+                        <option value="">Choose...</option>
+                        <option>Drama</option>
+                        <option>Horror</option>
+                        <option>SciFi</option>
+                    </select>
+                    <div className="input-group-append">
+                        <button onClick={this.state.value.setMovie}className="btn btn-secondary" >Set Movie</button>
+                    </div>
+                </div>
+            </div> 
+        );
     }
 }
 
-export default movieDesc;
+export default MovieDesc;
