@@ -10,7 +10,7 @@ class MovieDesc extends Component {
         return (
             <div className="container">
                 <br></br>
-                <h1>API Integration</h1><br></br>
+                <h1>Movie Application</h1><br></br>
                 <div className="input-group">
                     <select className="custom-select d-block w-1" id="genre" required>
                         <option value="">Choose...</option>
