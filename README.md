@@ -1,4 +1,4 @@
-# laraReact1
+# Laravel React Movies Project
 Simple application that displays movies in several genres including Drama, Horror and Sci Fi. 
 
 ## Installation
