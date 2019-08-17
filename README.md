@@ -15,7 +15,8 @@ Simple application that displays movies in several genres including Drama, Horro
 11. Startup the Laravel Server by typing php artisan serve
 12. Navigate to the React directory within the project using the command cd c:\xampp\htdocs\laraReact1\ReactModule
 13. Startup the React server by typing npm start
-14. Open up a browser and goto localhost:3000 to start the application
+14. Make sure to install the plugin https://chrome.google.com/webstore/detail/moesif-orign-cors-changer/digfbfaphojjndkpccljibejjbppifbc?hl=en-US into your browser if you are using chrome so you don't get the cross origin error!
+15. Open up a browser and goto localhost:3000 to start the application
 
 ```bash
 cd c:\xampp\htdocs\laraReact1\LaravelModule
