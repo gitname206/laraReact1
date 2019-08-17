@@ -1,5 +1,4 @@
-# Laravel React Movies Project
-Simple application that displays movies in several genres including Drama, Horror and Sci Fi. 
+# API DOCUMENTATION
 
 ## Usage
 1. Set your application to GET mode
