@@ -14,8 +14,8 @@ class MovieDesc extends Component {
                 <div className="input-group">
                     <select className="custom-select d-block w-1" id="genre" required>
                         <option value="">Choose...</option>
-                        <option>Drama</option>
-                        <option>Horror</option>
+                        <option>Action</option>
+                        <option>Comedy</option>
                         <option>SciFi</option>
                     </select>
                     <div className="input-group-append">
