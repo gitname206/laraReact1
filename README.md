@@ -2,7 +2,7 @@
 Simple application that displays movies in several genres including Drama, Horror and Sci Fi. 
 
 ## Installation
-1. Create a GitHub account at (https://github.com/)
+1. Create a GitHub account at https://github.com/
 2. 
 ```bash
 pip install foobar
